@@ -41,7 +41,7 @@ jobs:
 
       - name: Launch Web App
         run: |
-          npm start
+          npm start&
 
       - name: post-check
         run: |
