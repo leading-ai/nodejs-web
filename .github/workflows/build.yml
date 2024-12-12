@@ -45,6 +45,13 @@ jobs:
 
       - name: post-check
         run: |
-          curl http://localhost:3000
+          RESPONSE=$(curl -s http://localhost:3000)
+          echo "Response from service: $RESPONSE"
+          if [[ "$RESPONSE" == *"hello world"* ]]; then
+            echo "Post-check passed: 'hello world' found in response."
+          else
+            echo "Post-check failed: 'hello world' not found in response."
+            exit 1
+          fi
           
       
