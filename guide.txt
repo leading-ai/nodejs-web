@@ -1,0 +1,12 @@
+# build dockewr image
+docker build -t simple-nodejsweb .
+
+#run web app as one-shot
+docker run --rm -p 3000:3000 simple-nodejsweb
+
+#run web app as daemon
+docker run -d  -p 3000:3000 simple-nodejsweb
+
+#verify web app is up
+curl http://localhost:3000
+
